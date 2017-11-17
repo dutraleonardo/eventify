@@ -53,3 +53,12 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
+timestamp: 2017-11-16T22:09:52.648705
+ALTER TABLE auth_user ADD tipo CHAR(512);
+timestamp: 2017-11-16T22:09:52.888194
+ALTER TABLE auth_user ADD instituicao CHAR(100) NOT NULL;
+timestamp: 2017-11-16T22:10:13.302094
+ALTER TABLE auth_user ADD instituicao CHAR(100) NOT NULL;
+timestamp: 2017-11-16T22:10:39.440611
+ALTER TABLE auth_user ADD instituicao CHAR(100);
+success!

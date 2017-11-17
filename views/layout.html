@@ -40,30 +40,37 @@
         <![endif]-->
     <!-- Favicons -->
     {{include 'web2py_ajax.html'}} <!-- this includes jquery.js, calendar.js/.css and web2py.js -->
+  </head>
   <body>
     <!--[if lt IE 8]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
     <!-- Navbar ======================================= -->
      <section id="header" class="appear"></section>
-      <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="fa fa-bars color-white"></span>
-              </button>
-            <h1><a class="navbar-brand" href="index.html" data-0="line-height:90px;" data-300="line-height:50px;">      Amoeba
-              </a></h1>
-          </div>
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="#section-about">About</a></li>
-              <li><a href="#section-works">Portfolio</a></li>
-              <li><a href="#section-contact">Contact</a></li>
-            </ul>
-          </div>
-          <!--/.navbar-collapse -->
+    <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="fa fa-bars color-white"></span>
+            </button>
+          <h1><i class="navbar-brand" src="{{=URL('static/images/eventify.png')}}" href="index.html" data-0="line-height:90px;" data-300="line-height:50px;">
+            </i></h1>
         </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+            <li class="active"><a href="{{=URL(c='default', f='index')}}">Home</a></li>
+            <li><a href="#section-about">About</a></li>
+            <li><a href="#section-works">Portfolio</a></li>
+            <li><a href="#section-contact">Contact</a></li>
+            {{if not auth.is_logged_in():}}
+            <li><a href="{{=URL(c='default', f='user')}}">Login</a></li>
+            <li><a href="{{=URL(c='default', f='signup')}}">Registrar</a></li>
+            {{else:}}
+            <li><a href="{{=URL(c='default', f='user/profile')}}">Profile</a></li>
+            {{pass}}
+          </ul>
+        </div>
+        <!--/.navbar-collapse -->
       </div>
+    </div>
     <!-- Main ========================================= -->
     <!-- Begin page content -->
     {{include}}

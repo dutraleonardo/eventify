@@ -37,7 +37,26 @@ def user():
     to decorate functions that need access control
     also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
     """
+    auth.settings.remember_me_form = False
+    user = auth.login_bare(request.post_vars.email,request.post_vars.password)
+    if request.post_vars and not user:
+        response.flash = "Login inválido"
     return dict(form=auth())
+
+def signup():
+    # def onvalidation():
+        # print "entrou aqui"
+    # auth.settings.register_onvalidation.append(onvalidation)
+    db.auth_user.last_name.requires = None
+    form = auth.register()
+    if form.process().accepted:
+        session.flash = 'cadastro realizado'
+        redirect(URL('default', 'user'))
+    elif form.errors:
+        response.flash = 'erro ao cadastrar'
+    else:
+        response.flash = 'por favor, preencha o formulário'
+    return locals()
 
 
 @cache.action()
