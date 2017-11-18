@@ -62,3 +62,24 @@ ALTER TABLE auth_user ADD instituicao CHAR(100) NOT NULL;
 timestamp: 2017-11-16T22:10:39.440611
 ALTER TABLE auth_user ADD instituicao CHAR(100);
 success!
+timestamp: 2017-11-17T20:09:28.258046
+CREATE TABLE conferencia(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome CHAR(512) NOT NULL,
+    sigla CHAR(512) NOT NULL,
+    pais CHAR(512),
+    data_inicio DATE,
+    data_fim DATE
+);
+success!
+timestamp: 2017-11-18T00:57:34.643328
+CREATE TABLE artigo(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titulo CHAR(512) NOT NULL,
+    autor CHAR(512) NOT NULL,
+    email CHAR(512) NOT NULL,
+    keywords CHAR(512),
+    resumo TEXT,
+    arquivo CHAR(512) NOT NULL
+);
+success!

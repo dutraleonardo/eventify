@@ -77,4 +77,26 @@ def call():
     """
     return service()
 
+def conference_form():
+    form = SQLFORM(db.conferencia, submit_button=T('Submeter'))
+    if form.process().accepted:
+        session.flash = 'enviado com sucesso'
+        redirect(URL('index'))
+    elif form.errors:
+        response.flash = 'dados com erro'
+    else:
+        response.flash = 'por favor, preencha o formulário'
+        
+    return dict(form=form)
 
+def article():
+    form = SQLFORM(db.artigo, submit_button=T('Submeter'))
+    if form.process().accepted:
+        session.flash = 'enviado com sucesso'
+        redirect(URL('index'))
+    elif form.errors:
+        response.flash = 'dados com erro'
+    else:
+        response.flash = 'por favor, preencha o formulário'
+
+    return dict(form=form)
