@@ -83,3 +83,101 @@ CREATE TABLE artigo(
     arquivo CHAR(512) NOT NULL
 );
 success!
+timestamp: 2017-11-20T23:27:29.562061
+CREATE TABLE taxpayer(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    spouse_name CHAR(512)
+);
+success!
+timestamp: 2017-11-20T23:36:47.916427
+CREATE TABLE people(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person CHAR(512)
+);
+success!
+timestamp: 2017-11-26T22:08:33.417471
+ALTER TABLE artigo ADD autor3 CHAR(512) NOT NULL;
+timestamp: 2017-11-26T22:10:06.595004
+ALTER TABLE artigo ADD autor3 CHAR(512) NOT NULL;
+timestamp: 2017-11-26T22:10:07.410107
+ALTER TABLE artigo ADD autor3 CHAR(512) NOT NULL;
+timestamp: 2017-11-26T22:10:36.406010
+ALTER TABLE artigo ADD autor3 CHAR(512) NOT NULL;
+timestamp: 2017-11-26T22:11:14.210417
+ALTER TABLE artigo ADD autor3 CHAR(512) NOT NULL;
+timestamp: 2017-11-26T22:11:40.159590
+CREATE TABLE article(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titulo CHAR(512) NOT NULL,
+    autor CHAR(512) NOT NULL,
+    autor2 CHAR(512) NOT NULL,
+    autor3 CHAR(512) NOT NULL,
+    email CHAR(512) NOT NULL,
+    email2 CHAR(512),
+    email3 CHAR(512),
+    keywords CHAR(512),
+    resumo TEXT,
+    arquivo CHAR(512)
+);
+success!
+timestamp: 2017-12-04T22:17:51.161535
+ALTER TABLE article ADD status_id CHAR(512);
+success!
+timestamp: 2017-12-04T22:18:25.650262
+CREATE TABLE article_submit(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titulo CHAR(512) NOT NULL,
+    autor CHAR(512) NOT NULL,
+    autor2 CHAR(512) NOT NULL,
+    autor3 CHAR(512) NOT NULL,
+    email CHAR(512) NOT NULL,
+    email2 CHAR(512),
+    email3 CHAR(512),
+    keywords CHAR(512),
+    status_id CHAR(512),
+    resumo TEXT,
+    arquivo CHAR(512)
+);
+success!
+timestamp: 2017-12-04T22:18:25.895453
+ALTER TABLE article ADD status CHAR(512);
+success!
+success!
+success!
+success!
+timestamp: 2017-12-04T22:19:46.711660
+CREATE TABLE status(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    status CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2017-12-11T23:18:28.715870
+CREATE TABLE revisor(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome_revisor CHAR(512),
+    artigo_revisao CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
